@@ -1,4 +1,4 @@
-
+function generatePassword() {
 // Array holding characters
 var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -12,44 +12,70 @@ var lowerChoice = confirm("Do you want lowercase letters?")
 var specialChoice = confirm("Do you want specail characters?")
 var numChoice = confirm("Do you want Numbers?")
 
+var passArray = [];
 //Random number slectors for character choices
 if(numLong > 8 || numLong < 126){
  var passLength = numLong;
 }else{
-  alert("You must select a length between 8 and 126")
+  alert("You must select a length between 8 and 126");
 }
 
-for (let i = 0; i < passLength; i++) {
-  const element = array[i];
-  
-}
-if (upperChoice == true) {
+
+
+
+
+/*
+
+
+
+
+*/
+// does this go in its own function or should it just be part of the generatePassword function
+
+for (var i = 0; i < passLength; i++) {
+if (upperChoice) {
   var selectUpper = Math.floor(Math.random() * 26);
-} else {
-
+  passArray.push(upper[selectUpper])  
 }
 
-if (lowerChoice = true) {
+if (lowerChoice) {
   var selectLower = Math.floor(Math.random() * 26);
-} else {
-
+  passArray.push(lower[selectLower])
 }
 
-if (specialChoice = true) {
+if (specialChoice) {
  var selectSpecial = Math.floor(Math.random()*14);
-} else {
-
-}
-
-if (numChoice = true) {
+ passArray.push(specail[selectSpecial])
+} 
+if (numChoice) {
  var selectNum = Math.floor(Math.random()*10);
-} else {
-
+ passArray.push(num[selectNum])
 }
-//creating funtion to generate password
-function generatePassword() {
+console.log(passArray);
 
+
+    
+    /*Here is where I'm trying to figure out how to add all the above selections. 
+    somthing along the lines of 
+    options.join(passArray)
+    
+    
+    */
+  
+  }
 }
+
+
+/* found this code for randomizing array orders was wondring if it would be of any use
+for (let i = points.length -1; i > 0; i--) {
+  let j = Math.floor(Math.random() * i)
+  let k = points[i]
+  points[i] = points[j]
+  points[j] = k
+}
+*/
+
+
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
