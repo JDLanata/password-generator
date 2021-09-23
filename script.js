@@ -11,7 +11,7 @@ function generatePassword() {
   var passArray = [];
   var holding = [];
   //Random number slectors for character choices
-  if (numLong < 8 || numLong > 125) {
+  if (numLong < 8 || numLong > 126) {
     alert("You must select a length between 8 and 126");
     return;
     
