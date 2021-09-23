@@ -13,6 +13,16 @@ var specialChoice = confirm("Do you want specail characters?")
 var numChoice = confirm("Do you want Numbers?")
 
 //Random number slectors for character choices
+if(numLong > 8 || numLong < 126){
+ var passLength = numLong;
+}else{
+  alert("You must select a length between 8 and 126")
+}
+
+for (let i = 0; i < passLength; i++) {
+  const element = array[i];
+  
+}
 if (upperChoice == true) {
   var selectUpper = Math.floor(Math.random() * 26);
 } else {
